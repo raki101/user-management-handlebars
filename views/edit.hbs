@@ -1,0 +1,24 @@
+
+
+{{> back-btn}}
+
+{{#if alert}}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Holy guacamole!</strong>
+    {{alert}}
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
+{{/if}}
+
+{{#each rows}}
+<form action="/edit/{{this.id}}" method="post" class="row g-3 my-3 needs-validation">
+  
+  {{> user-form}}
+</form>
+
+  {{/each}}

@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-6"><h1>Users</h1></div>
+  <div class="col-6 d-flex justify-content-end">
+    <a href="/adduser" type="button" class="btn btn-primary align-self-center">
+      Add user
+    </a>
+  </div>
+</div>
+
+<table class="table table-bordered mt-5 mb-5">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">FirstName</th>
+      <th scope="col">LastName</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each rows}}
+      <tr>
+        <th scope="row">{{this.id}}</th>
+        <td>{{this.first_name}}</td>
+        <td>{{this.last_name}}</td>
+        <td>{{this.email}}</td>
+        <td>{{this.phone}}</td>
+        <td>
+          <a
+            href="/view/{{this.id}}"
+            type="button"
+            class="btn btn-light btn-small"
+          ><i class="bi bi-eye"></i>View</a>
+          <a href="/edit/{{this.id}}" type="button" class="btn btn-light"><i
+              class="bi bi-pencil"
+            ></i>Edit</a>
+          <a href="/{{this.id}}" type="button" class="btn btn-light"><i
+              class="bi bi-trash"
+            ></i>Delete</a>
+
+        </td>
+      </tr>
+    {{/each}}
+
+  </tbody>
+</table>
